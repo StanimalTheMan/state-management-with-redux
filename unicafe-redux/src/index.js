@@ -11,7 +11,7 @@ const App = () => {
       type: "GOOD",
     });
   };
-
+  // other dispatchers are for ex. 6.2?
   const ok = () => {
     store.dispatch({
       type: "OK",
