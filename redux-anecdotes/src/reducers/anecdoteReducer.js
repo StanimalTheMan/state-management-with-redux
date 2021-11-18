@@ -38,4 +38,12 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+// vote action creator
+export const voteFor = (id) => {
+  return {
+    type: "VOTE",
+    id: id,
+  };
+};
+
 export default reducer;
