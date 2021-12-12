@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeNotification } from "../reducers/notificationReducer";
+// import { removeNotification } from "../reducers/notificationReducer";
 
 const Notification = () => {
   const dispatch = useDispatch();
@@ -12,15 +12,15 @@ const Notification = () => {
     borderWidth: 1,
   };
 
-  React.useEffect(() => {
-    const timeId = setTimeout(() => {
-      dispatch(removeNotification());
-    }, 5000);
+  // React.useEffect(() => {
+  //   const timeId = setTimeout(() => {
+  //     dispatch(removeNotification());
+  //   }, 5000);
 
-    return () => {
-      clearTimeout(timeId);
-    };
-  }, [notification]);
+  //   return () => {
+  //     clearTimeout(timeId);
+  //   };
+  // }, [notification]);
 
   const returnedBlankOrNotification = notification ? (
     <div style={style}>{notification}</div>
