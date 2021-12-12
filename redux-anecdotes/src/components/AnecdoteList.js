@@ -4,7 +4,13 @@ import { voteFor } from "../reducers/anecdoteReducer";
 import { setNotification } from "../reducers/notificationReducer";
 
 function AnecdoteList() {
-  const anecdotes = useSelector((state) => state.anecdotes);
+  const anecdotes = useSelector((state) =>
+    state.anecdotes.filter((anecdote) => {
+      return anecdote.content
+        .toLowerCase()
+        .includes(state.filter.toLowerCase());
+    })
+  );
   const dispatch = useDispatch();
 
   const vote = (id) => {
