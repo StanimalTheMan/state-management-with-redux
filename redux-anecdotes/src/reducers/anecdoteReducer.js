@@ -53,14 +53,10 @@ export const voteFor = (id) => {
 };
 
 // create anecdote action creator
-export const createAnecdote = (anecdote) => {
+export const createAnecdote = (data) => {
   return {
     type: "NEW_ANECDOTE",
-    data: {
-      content: anecdote,
-      id: getId(),
-      votes: 0,
-    },
+    data,
   };
 };
 
