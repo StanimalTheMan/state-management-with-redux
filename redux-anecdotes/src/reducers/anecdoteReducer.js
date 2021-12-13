@@ -55,10 +55,13 @@ export const voteFor = (id) => {
 };
 
 // create anecdote action creator
-export const createAnecdote = (data) => {
-  return {
-    type: "NEW_ANECDOTE",
-    data,
+export const createAnecdote = (content) => {
+  return async (dispatch) => {
+    const newAnecdote = await anecdoteService.createNew(content);
+    dispatch({
+      type: "NEW_NOTE",
+      data: newAnecdote,
+    });
   };
 };
 
