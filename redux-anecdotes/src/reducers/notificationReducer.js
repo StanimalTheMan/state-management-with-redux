@@ -18,6 +18,7 @@ export const setNotification = (notification, displayTimeInSeconds) => {
     setTimeout(() => {
       dispatch(removeNotification());
     }, displayTimeInSeconds * 1000);
+    // clearTimeout(timeId);
   };
 };
 
